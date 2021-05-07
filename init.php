@@ -24,6 +24,9 @@ spl_autoload_register('i_autoload');
  */
 if (!function_exists('config')) {
 	!defined('CONFIG_PATH') && define('CONFIG_PATH', ROOT . 'config/');
+	if (!file_exists(CONFIG_PATH)) {
+        	mkdir(CONFIG_PATH);
+    	}
 	function config($key) {
 		static $configs = array();
 		list($key, $file) = explode('@', $key, 2);
@@ -68,6 +71,9 @@ if (!function_exists('config')) {
 
 // cache
 define('CACHE_PATH', ROOT.'cache/');
+if (!file_exists(CACHE_PATH)) {
+	mkdir(CACHE_PATH);
+}
 cache::$type = empty( config('cache_type') )?'secache':config('cache_type');
 
 
