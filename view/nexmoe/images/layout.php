@@ -4,19 +4,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
 	<title><?php e($title.' - '.config('site_name'));?></title>
-	<link
-	  rel="stylesheet"
-	  href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
-	  integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
-	  crossorigin="anonymous"
-	/>
-	<script
-	  src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
-	  integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
-	  crossorigin="anonymous"
-	></script>
+	<?php e(config('loadmdui_css'));?>
+	<?php e(config('loadmdui_js'));?>
 </head>
-<body class="mdui-theme-primary-blue-grey mdui-theme-accent-blue">
+<body class="mdui-theme-primary-<?php e(config('nexmoe_mdui-theme-primary_color'));?> mdui-theme-accent-<?php e(config('nexmoe_mdui-theme-accent_color'));?>">
 	<header class="mdui-appbar mdui-color-theme">
 		<div class="mdui-toolbar mdui-container">
 			<a href="/" class="mdui-typo-headline"><?php e(config('site_name'));?></a>
