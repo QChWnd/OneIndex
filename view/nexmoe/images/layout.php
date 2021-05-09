@@ -6,6 +6,10 @@
 	<title><?php e($title.' - '.config('site_name'));?></title>
 	<?php e(config('loadmdui_css'));?>
 	<?php e(config('loadmdui_js'));?>
+	<?php e(config('loadnprogress_css'));?>
+	<?php e(config('loadnprogress_js'));?>
+	<style><?php e(config('nexmoe_layout_style'));?></style>
+	<?php e(config('nexmoe_ext'));?>
 </head>
 <body class="mdui-theme-primary-<?php e(config('nexmoe_mdui-theme-primary_color'));?> mdui-theme-accent-<?php e(config('nexmoe_mdui-theme-accent_color'));?>">
 	<header class="mdui-appbar mdui-color-theme">

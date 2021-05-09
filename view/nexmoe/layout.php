@@ -6,8 +6,11 @@
 	<title><?php e($title.' - '.config('site_name'));?></title>
 	<?php e(config('loadmdui_css'));?>
 	<?php e(config('loadmdui_js'));?>
-	<style><?php e(config('nexmoe_layout_style_body'));?></style>
+	<?php e(config('loadnprogress_css'));?>
+	<?php e(config('loadnprogress_js'));?>
+	<style><?php e(config('nexmoe_layout_style'));?></style>
 </head>
+	<?php e(config('nexmoe_ext'));?>
 <body class="mdui-theme-primary-<?php e(config('nexmoe_mdui-theme-primary_color'));?> mdui-theme-accent-<?php e(config('nexmoe_mdui-theme-accent_color'));?>">
 	<div class="mdui-container">
 	    <div class="mdui-container-fluid">
