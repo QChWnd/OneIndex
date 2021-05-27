@@ -4,14 +4,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
 	<title><?php e($title.' - '.config('site_name'));?></title>
+	<?php e(config('loadfavicon'));?>
 	<?php e(config('loadmdui_css'));?>
 	<?php e(config('loadmdui_js'));?>
 	<?php e(config('loadnprogress_css'));?>
 	<?php e(config('loadnprogress_js'));?>
-	<style><?php e(config('nexmoe_layout_style'));?></style>
 </head>
 	<?php e(config('nexmoe_ext'));?>
-<body class="mdui-theme-primary-<?php e(config('nexmoe_mdui-theme-primary_color'));?> mdui-theme-accent-<?php e(config('nexmoe_mdui-theme-accent_color'));?>">
+<body class="mdui-theme-layout-<?php e(config('nexmoe_mdui-theme-layout'));?> mdui-theme-primary-<?php e(config('nexmoe_mdui-theme-primary_color'));?> mdui-theme-accent-<?php e(config('nexmoe_mdui-theme-accent_color'));?>">
 	<div class="mdui-container">
 	    <div class="mdui-container-fluid">
 	    <div class="mdui-toolbar nexmoe-item">
@@ -25,5 +25,13 @@
 		</div>
     	<?php view::section('content');?>
   	</div>
+  	<style><?php e(config('nprogress_style'));?><?php e(config('nexmoe_layout_style'));?></style>
+        <script>
+                NProgress.start();
+                setTimeout(function () {
+                        NProgress.done();
+                        $(".fade").removeClass("out");
+                }, 3000);
+        </script>
 </body>
 </html>
