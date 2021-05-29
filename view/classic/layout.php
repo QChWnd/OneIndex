@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title><?php _($title);?></title>
+	<?php e(config('loadfavicon'));?>
 	<?php e(config('loadmdui_css'));?>
 	<?php e(config('loadmdui_js'));?>
 	<style>
