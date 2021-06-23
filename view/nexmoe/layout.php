@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="theme-color" content="<?php e($title.' - '.config('nexmoe_theme-color'));?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
 	<?php if($path != '/'):?>
 	<title><?php e($title.' - '.config('site_name'));?></title>
@@ -10,6 +11,7 @@
 	<?php endif;?>
 	<link rel="icon" href="<?php e(config('favicon'));?>">
 	<link rel="shortcut icon" href="<?php e(config('favicon'));?>">
+	<title><?php e(config('site_name'));?></title>
 	<?php e(config('loadmdui_css'));?>
 	<?php e(config('loadmdui_js'));?>
 	<?php e(config('loadnprogress_css'));?>
