@@ -8,7 +8,8 @@
 	<?php else:?>
 	<title><?php e(config('site_name').' - '.config('site_descr'));?></title>
 	<?php endif;?>
-	<?php e(config('loadfavicon'));?>
+	<link rel="icon" href="<?php e(config('favicon'));?>">
+	<link rel="shortcut icon" href="<?php e(config('favicon'));?>">
 	<?php e(config('loadmdui_css'));?>
 	<?php e(config('loadmdui_js'));?>
 	<?php e(config('loadnprogress_css'));?>
@@ -28,6 +29,16 @@
 		</div>
 		</div>
     	<?php view::section('content');?>
+		<footer class="mdui-container-fluid" style="text-align: center; margin-top: 5%;">
+    			<div id="favicon">
+     				<img src="<?php e(config('favicon'));?>" style="width: 130px; border-radius: 100%;">
+    			</div>
+    			<div id="footertext">
+				<p>Copyright © by <?php e(config('author'));?> All Rights Reserved.</p>
+    			</div>
+    			<div id="hitokoto">
+    			</div>
+		</footer>
   	</div>
   	<style><?php e(config('nprogress_style'));?><?php e(config('nexmoe_layout_style'));?></style>
         <script>
