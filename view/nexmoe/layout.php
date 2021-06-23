@@ -3,7 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+	<?php if($path != '/'):?>
 	<title><?php e($title.' - '.config('site_name'));?></title>
+	<?php else:?>
+	<title><?php e(config('site_name').' - '.config('site_descr'));?></title>
+	<?php endif;?>
 	<?php e(config('loadfavicon'));?>
 	<?php e(config('loadmdui_css'));?>
 	<?php e(config('loadmdui_js'));?>
