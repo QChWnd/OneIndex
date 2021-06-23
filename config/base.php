@@ -1,6 +1,8 @@
 <?php return array(
     'site_name' => 'OneIndex',
     'site_descr' => 'OneDrive Directory Index',
+    'favicon' => '/logo.png',
+    'author' => 'donwa',
     'password' => 'oneindex',
     'style' => 'nexmoe',
     'onedrive_root' => '',
