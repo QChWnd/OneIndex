@@ -20,7 +20,7 @@
 	<?php e(config('nexmoe_ext'));?>
 <body class="mdui-theme-layout-<?php e(config('nexmoe_mdui-theme-layout'));?> mdui-theme-primary-<?php e(config('nexmoe_mdui-theme-primary_color'));?> mdui-theme-accent-<?php e(config('nexmoe_mdui-theme-accent_color'));?>">
 	<div class="mdui-container">
-	    <div class="mdui-container-fluid">
+	    <div class="mdui-container" style="background: #ffffff15; border-radius: 30px;">
 	    <div class="mdui-toolbar nexmoe-item">
 			<a href="/"><?php e(config('site_name'));?></a>
 			<?php foreach((array)$navs as $n=>$l):?>
@@ -37,8 +37,8 @@
     			</div>
     			<div id="footertext">
 				<p>Copyright © by <?php e(config('author'));?> All Rights Reserved.</p>
-    			</div>
-    			<div id="hitokoto">
+				<p style="opacity: 75%;"><?php e(config('site_descr'));?></p>
+				<div style="margin-top: 5%;"></div>
     			</div>
 		</footer>
   	</div>

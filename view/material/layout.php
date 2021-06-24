@@ -4,7 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
 	<title><?php e($title.' - '.config('site_name'));?></title>
-	<?php e(config('loadfavicon'));?>
+	<link rel="icon" href="<?php e(config('favicon'));?>">
+	<link rel="shortcut icon" href="<?php e(config('favicon'));?>">
 	<?php e(config('loadmdui_css'));?>
 	<?php e(config('loadmdui_js'));?>
 	<style>

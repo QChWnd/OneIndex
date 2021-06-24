@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title><?php _($title);?></title>
-	<?php e(config('loadfavicon'));?>
+	<link rel="icon" href="<?php e(config('favicon'));?>">
+	<link rel="shortcut icon" href="<?php e(config('favicon'));?>">
 	<?php e(config('loadmdui_css'));?>
 	<?php e(config('loadmdui_js'));?>
 	<style>
