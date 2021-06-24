@@ -1,4 +1,4 @@
-<?php 
+<?php
 class IndexController{
 	private $url_path;
 	private $name;
@@ -18,7 +18,7 @@ class IndexController{
 		$this->items = $this->items($this->path);
 	}
 
-	
+
 	function index(){
 		//是否404
 		$this->is404();
@@ -43,7 +43,7 @@ class IndexController{
 		}else{
 			$this->items['.password']['path'] = get_absolute_path($this->path).'.password';
  		}
-		
+
 		$password = $this->get_content($this->items['.password']);
 		list($password) = explode("\n",$password);
 		$password = trim($password);
@@ -53,7 +53,7 @@ class IndexController{
 		}
 
 		$this->password($password);
-		
+
 	}
 
 	function password($password){
@@ -82,7 +82,7 @@ class IndexController{
 	}
 
 
-	
+
 	//文件夹
 	function dir(){
 		$root = get_absolute_path(dirname($_SERVER['SCRIPT_NAME'])).config('root_path');
@@ -113,6 +113,12 @@ class IndexController{
 			//不在列表中展示
 			unset($this->items['HEAD.md']);
 		}
+
+		if($this->items['.gallery']){
+			$is_gallery = true;
+			//不在列表中展示
+			unset($this->items['.gallery']);
+		}
 		return view::load('list')->with('title', 'index of '. urldecode($this->url_path))
 					->with('navs', $navs)
 					->with('path',join("/", array_map("rawurlencode", explode("/", $this->url_path)))  )
@@ -133,7 +139,7 @@ class IndexController{
 		$http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
 		$uri = onedrive::urlencode(get_absolute_path($this->url_path.'/'.$this->name));
 		$data['url'] = $http_type.$_SERVER['HTTP_HOST'].$root.$uri;
-		
+
 
 		$show = config('show');
 		foreach($show as $n=>$exts){
@@ -178,7 +184,7 @@ class IndexController{
 		if(!empty($this->name)){
 			$navs[$this->name] = end($navs).urlencode($this->name);
 		}
-		
+
 		return $navs;
 	}
 

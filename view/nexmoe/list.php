@@ -1,5 +1,5 @@
 <?php view::layout('layout')?>
-<?php 
+<?php
 function file_ico($item){
   $ext = strtolower(pathinfo($item['name'], PATHINFO_EXTENSION));
   if(in_array($ext,['bmp','jpg','jpeg','png','gif'])){
@@ -16,13 +16,24 @@ function file_ico($item){
 ?>
 
 <?php view::begin('content');?>
-	
+
 <div class="mdui-container-fluid">
 <?php if($head):?>
 <div class="mdui-typo" style="padding: 20px;">
 	<?php e($head);?>
 </div>
 <?php endif;?>
+<?php if($is_gallery):?>
+<div class="gallery">
+  <?php foreach((array)$items as $item):?>
+    <figure>
+      <a href="<?php echo get_absolute_path($root.$path.rawurlencode($item['name']));?>">
+        <img src="<?php echo get_absolute_path($root.$path.rawurlencode($item['name']));?>" />
+      </a>
+        <figcaption class="jg-caption"><?php e($item['name']);?></figcaption>
+    </figure>
+</div>
+<?php else:?>
 <style>
 .thumb .th{
 	display: none;
@@ -77,7 +88,7 @@ function file_ico($item){
 		  	</a>
 		</li>
 		<?php endif;?>
-		
+
 		<?php foreach((array)$items as $item):?>
 			<?php if(!empty($item['folder'])):?>
 
@@ -107,6 +118,7 @@ function file_ico($item){
 	</ul>
 </div>
 </div>
+<?php endif;?>
 <?php if($readme):?>
 <div class="mdui-typo mdui-shadow-3" style="padding: 20px;margin: 20px; 0">
 	<div class="mdui-chip">
@@ -178,7 +190,7 @@ function thumb(){
 		});
 	}
 
-}	
+}
 
 $(function(){
 	$('.file a').each(function(){

@@ -16,6 +16,8 @@
 	<?php e(config('loadmdui_js'));?>
 	<?php e(config('loadnprogress_css'));?>
 	<?php e(config('loadnprogress_js'));?>
+	<?php e(config('loadJustified-Gallery_css'));?>
+	<?php e(config('loadJustified-Gallery_js'));?>
 </head>
 	<?php e(config('nexmoe_ext'));?>
 <body class="mdui-theme-layout-<?php e(config('nexmoe_mdui-theme-layout'));?> mdui-theme-primary-<?php e(config('nexmoe_mdui-theme-primary_color'));?> mdui-theme-accent-<?php e(config('nexmoe_mdui-theme-accent_color'));?>">
