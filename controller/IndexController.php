@@ -119,13 +119,15 @@ class IndexController{
 			//不在列表中展示
 			unset($this->items['.gallery']);
 		}
-		return view::load('list')->with('title', 'index of '. urldecode($this->url_path))
+		return view::load('list')
+					->with('title', 'Index of '. urldecode($this->url_path))
 					->with('navs', $navs)
-					->with('path',join("/", array_map("rawurlencode", explode("/", $this->url_path)))  )
+					->with('path', join("/", array_map("rawurlencode", explode("/", $this->url_path))))
 					->with('root', $root)
 					->with('items', $this->items)
-					->with('head',$head)
-					->with('readme',$readme);
+					->with('head', $head)
+					->with('readme', $readme)
+					->with('is_gallery', $is_gallery);
 	}
 
 	function show($item){
