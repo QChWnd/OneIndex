@@ -28,6 +28,8 @@ class AdminController{
 			}
 
 			config('site_name', $_POST['site_name']);
+			config('site_descr', $_POST['site_descr']);
+			config('author', $_POST['author']);
 			config('style', $_POST['style']);
 			config('onedrive_root', get_absolute_path($_POST['onedrive_root']));
 			config('onedrive_hide', $_POST['onedrive_hide']);

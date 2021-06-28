@@ -27,8 +27,8 @@ function file_ico($item){
 <div class="gallery">
   <?php foreach((array)$items as $item):?>
     <figure>
-      <a href="<?php echo get_absolute_path($root.$path.rawurlencode($item['name']));?>">
-        <img src="<?php echo get_absolute_path($root.$path.rawurlencode($item['name']));?>" />
+      <a href="<?php echo get_absolute_path($root.$path).rawurlencode($item['name']);?>">
+        <img src="<?php echo get_absolute_path($root.$path).rawurlencode($item['name']);?>">
       </a>
         <figcaption class="jg-caption"><?php e($item['name']);?></figcaption>
     </figure>
@@ -69,7 +69,13 @@ function file_ico($item){
     top: 180px;
 }
 </style>
-<div class="nexmoe-item">
+<div class="nexmoe-list" style="
+    border-radius: 20px;
+    background-color: #ffffff20;
+    padding: 15px !important;
+    margin: 20px -8px 0 !important;
+    box-shadow: 0 0.5em 3em;
+">
 <div class="mdui-row">
 	<ul class="mdui-list">
 		<li class="mdui-list-item th">
@@ -92,7 +98,6 @@ function file_ico($item){
 
 		<?php foreach((array)$items as $item):?>
 			<?php if(!empty($item['folder'])):?>
-
 		<li class="mdui-list-item mdui-ripple">
 			<a href="<?php echo get_absolute_path($root.$path.rawurlencode($item['name']));?>">
 			  <div class="mdui-col-xs-12 mdui-col-sm-7 mdui-text-truncate">
@@ -175,12 +180,12 @@ function downall() {
 function thumb(){
 	if($('.mdui-fab i').text() == "apps"){
 		$('.mdui-fab i').text("format_list_bulleted");
-		$('.nexmoe-item').removeClass('thumb');
-		$('.nexmoe-item .mdui-icon').show();
-		$('.nexmoe-item .mdui-list-item').css("background","");
+		$('.nexmoe-list').removeClass('thumb');
+		$('.nexmoe-list .mdui-icon').show();
+		$('.nexmoe-list .mdui-list-item').css("background","");
 	}else{
 		$('.mdui-fab i').text("apps");
-		$('.nexmoe-item').addClass('thumb');
+		$('.nexmoe-list').addClass('thumb');
 		$('.mdui-col-xs-12 i.mdui-icon').each(function(){
 			if($(this).text() == "image" || $(this).text() == "ondemand_video"){
 				var href = $(this).parent().parent().attr('href');

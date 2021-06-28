@@ -42,7 +42,6 @@
 ',
     'nexmoe_layout_style' => '
 body {
-    background-color: #f2f5fa;
     padding-bottom: 60px;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -69,9 +68,9 @@ body {
 
 .mdui-list-item {
     margin: 0 !important;
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 0 10px 0 5px !important;
-    border: 1px solid #eee;
+    border: 1px solid #ffffff50;
     margin-bottom: 10px !important;
 }
 
