@@ -32,6 +32,7 @@ function file_ico($item){
       </a>
         <figcaption class="jg-caption"><?php e($item['name']);?></figcaption>
     </figure>
+  <?php endforeach;?>
 </div>
 <?php else:?>
 <style>
@@ -42,28 +43,28 @@ function file_ico($item){
 	display: none;
 }
 .thumb .mdui-list-item a ,.thumb .mdui-list-item {
-	width:217px;
+	width: 217px;
 	height: 230px;
 	float: left;
 	margin: 10px 10px !important;
 }
 
 .thumb .mdui-col-xs-12,.thumb .mdui-col-sm-7{
-	width:100% !important;
-	height:230px;
+	width: 100% !important;
+	height: 230px;
 }
 
 .thumb .mdui-list-item .mdui-icon{
-	font-size:100px;
+	font-size: 100px;
 	display: block;
 	margin-top: 40px;
-	color: #7ab5ef;
+	/* color: #7ab5ef; */
 }
 .thumb .mdui-list-item span{
 	float: left;
 	display: block;
 	text-align: center;
-	width:100%;
+	width: 100%;
 	position: absolute;
     top: 180px;
 }

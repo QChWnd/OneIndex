@@ -28,7 +28,7 @@
 	<div class="mdui-container">
     	<?php view::section('content');?>
   	</div>
-	<style><?php e(config('nprogress_style'));?><?php e(config('nexmoe_layout_style'));?></style>
+	<style><?php e(config('nexmoe_nprogress_style'));?><?php e(config('nexmoe_layout_style'));?></style>
         <script>
                 NProgress.start();
                 setTimeout(function () {

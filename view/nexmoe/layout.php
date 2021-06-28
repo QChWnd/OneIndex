@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="theme-color" content="<?php e($title.' - '.config('nexmoe_theme-color'));?>">
+	<meta name="theme-color" content="<?php e(config('nexmoe_theme-color'));?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
 	<?php if($path != '/'):?>
 	<title><?php e($title.' - '.config('site_name'));?></title>
@@ -14,6 +14,7 @@
 	<title><?php e(config('site_name'));?></title>
 	<?php e(config('loadmdui_css'));?>
 	<?php e(config('loadmdui_js'));?>
+	<?php e(config('loadjquery'));?>
 	<?php e(config('loadnprogress_css'));?>
 	<?php e(config('loadnprogress_js'));?>
 	<?php e(config('loadJustified-Gallery_css'));?>
@@ -22,7 +23,7 @@
 	<?php e(config('nexmoe_ext'));?>
 <body class="mdui-theme-layout-<?php e(config('nexmoe_mdui-theme-layout'));?> mdui-theme-primary-<?php e(config('nexmoe_mdui-theme-primary_color'));?> mdui-theme-accent-<?php e(config('nexmoe_mdui-theme-accent_color'));?>">
 	<div class="mdui-container">
-	    <div class="mdui-container" style="background: #ffffff15; border-radius: 30px;">
+	    <div class="mdui-container" style="background: #ffffff15; border-radius: 30px; width: auto; margin-top: 60px;">
 	    <div class="mdui-toolbar nexmoe-item">
 			<a href="/"><?php e(config('site_name'));?></a>
 			<?php foreach((array)$navs as $n=>$l):?>
@@ -44,7 +45,7 @@
     			</div>
 		</footer>
   	</div>
-  	<style><?php e(config('nprogress_style'));?><?php e(config('nexmoe_layout_style'));?></style>
+  	<style><?php e(config('nexmoe_nprogress_style'));?><?php e(config('nexmoe_layout_style'));?></style>
         <script>
                 NProgress.start();
                 setTimeout(function () {
