@@ -34,6 +34,9 @@ function file_ico($item){
     </figure>
   <?php endforeach;?>
 </div>
+<script>
+	jQuery("#gallery").justifiedGallery();
+</script>
 <?php else:?>
 <style>
 .thumb .th{
