@@ -28,6 +28,7 @@
     'loadnprogress_js' => '<script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>',
     'loadJustified-Gallery_css' => '<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/miromannino/Justified-Gallery@3.8.1/dist/css/justifiedGallery.css"/>',
     'loadJustified-Gallery_js' => '<script src="https://cdn.jsdelivr.net/gh/miromannino/Justified-Gallery@3.8.1/dist/js/jquery.justifiedGallery.js"></script>',
+    'thumbsize' => '720',
     'nprogress_style' => '
 #nprogress .bar {
     background: #ff7e91;
