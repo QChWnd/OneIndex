@@ -3,6 +3,7 @@
     'site_descr' => 'OneDrive Directory Index',
     'favicon' => '/logo.png',
     'author' => 'donwa',
+    'copyright' => 'Copyright © by donwa All Rights Reserved.',
     'password' => 'oneindex',
     'style' => 'nexmoe',
     'onedrive_root' => '',

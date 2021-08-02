@@ -33,6 +33,16 @@
         <?php view::section('content');?>
     </div>
     <style><?php e(config('nexmoe_nprogress_style'));?><?php e(config('nexmoe_layout_style'));?></style>
+    <footer class="mdui-container-fluid" style="text-align: center; margin-top: 5%;">
+        <div id="favicon">
+            <img src="<?php e(config('favicon'));?>" style="width: 130px; border-radius: 100%;">
+        </div>
+            <div id="footertext">
+                <p><?php e(config('copyright'));?></p>
+                <p style="opacity: 75%;"><?php e(config('site_descr'));?></p>
+                <div style="margin-top: 5%;"></div>
+            </div>
+    </footer>
     <script>
         NProgress.start();
         setTimeout(function () {

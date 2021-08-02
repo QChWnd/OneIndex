@@ -18,6 +18,10 @@
             <input class="mdui-textfield-input" type="text" name="author" value="<?php echo $config['author'];?>"/>
         </div>
         <div class="mdui-textfield">
+            <h4>版权信息</h4>
+            <input class="mdui-textfield-input" type="text" name="copyright" value="<?php echo $config['copyright'];?>"/>
+        </div>
+        <div class="mdui-textfield">
             <h4>网站主题<small></small></h4>
             <select name="style" class="mdui-select">
                 <?php
