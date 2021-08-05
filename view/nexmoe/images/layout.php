@@ -7,10 +7,8 @@
     <title><?php e($title.' - '.config('site_name'));?></title>
     <link rel="icon" href="<?php e(config('favicon'));?>">
     <link rel="shortcut icon" href="<?php e(config('favicon'));?>">
-    <?php e(config('loadmdui_css'));?>
-    <?php e(config('loadmdui_js'));?>
-    <?php e(config('loadnprogress_css'));?>
-    <?php e(config('loadnprogress_js'));?>
+    <?php e(config('loadmdui'));?>
+    <?php e(config('loadnprogress'));?>
     <?php e(config('nexmoe_ext'));?>
 </head>
 <body class="mdui-theme-layout-<?php e(config('nexmoe_mdui-theme-layout'));?> mdui-theme-primary-<?php e(config('nexmoe_mdui-theme-primary_color'));?> mdui-theme-accent-<?php e(config('nexmoe_mdui-theme-accent_color'));?>">

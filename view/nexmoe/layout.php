@@ -12,13 +12,12 @@
     <link rel="icon" href="<?php e(config('favicon'));?>">
     <link rel="shortcut icon" href="<?php e(config('favicon'));?>">
     <title><?php e(config('site_name'));?></title>
-    <?php e(config('loadmdui_css'));?>
-    <?php e(config('loadmdui_js'));?>
+    <?php e(config('loadmdui'));?>
     <?php e(config('loadjquery'));?>
-    <?php e(config('loadnprogress_css'));?>
-    <?php e(config('loadnprogress_js'));?>
-    <?php e(config('loadJustified-Gallery_css'));?>
-    <?php e(config('loadJustified-Gallery_js'));?>
+    <?php e(config('loadnprogress'));?>
+    <?php e(config('loadJustified-Gallery'));?>
+    <?php e(config('loadMathJax_config'));?>
+    <?php e(config('loadMathJax_js'));?>
 </head>
     <?php e(config('nexmoe_ext'));?>
 <body class="mdui-theme-layout-<?php e(config('nexmoe_mdui-theme-layout'));?> mdui-theme-primary-<?php e(config('nexmoe_mdui-theme-primary_color'));?> mdui-theme-accent-<?php e(config('nexmoe_mdui-theme-accent_color'));?>">

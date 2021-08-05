@@ -6,8 +6,7 @@
 	<title><?php e($title.' - '.config('site_name'));?></title>
 	<link rel="icon" href="<?php e(config('favicon'));?>">
 	<link rel="shortcut icon" href="<?php e(config('favicon'));?>">
-	<?php e(config('loadmdui_css'));?>
-	<?php e(config('loadmdui_js'));?>
+	<?php e(config('loadmdui'));?>
 	<style>
 		.mdui-appbar .mdui-toolbar{
 			height:56px;

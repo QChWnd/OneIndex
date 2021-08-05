@@ -22,13 +22,18 @@
         'doc' => ['csv', 'doc', 'docx', 'odp', 'ods', 'odt', 'pot', 'potm', 'potx', 'pps','ppsx', 'ppsxm', 'ppt', 'pptm', 'pptx', 'rtf', 'xls', 'xlsx']
     ),
     'images' => ['home' => false, 'public' => false, 'exts' => ['jpg','png','gif','bmp']],
-    'loadmdui_css' => '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css" integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous"/>',
-    'loadmdui_js' => '<script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>',
+    'loadmdui' => '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css" integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous"/><script src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>',
     'loadjquery' => '<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>',
-    'loadnprogress_css' => '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css"/>',
-    'loadnprogress_js' => '<script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>',
-    'loadJustified-Gallery_css' => '<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/miromannino/Justified-Gallery@3.8.1/dist/css/justifiedGallery.css"/>',
-    'loadJustified-Gallery_js' => '<script src="https://cdn.jsdelivr.net/gh/miromannino/Justified-Gallery@3.8.1/dist/js/jquery.justifiedGallery.js"></script>',
+    'loadnprogress' => '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css"/><script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>',
+    'loadJustified-Gallery' => '<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/miromannino/Justified-Gallery@3.8.1/dist/css/justifiedGallery.css"/><script src="https://cdn.jsdelivr.net/gh/miromannino/Justified-Gallery@3.8.1/dist/js/jquery.justifiedGallery.js"></script>',
+    'loadMathJax_js' => '<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-chtml.js"></script>',
+    'loadMathJax_config' => '
+MathJax = {
+    tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+};
+',
     'thumbsize' => '720',
     'nprogress_style' => '
 #nprogress .bar {

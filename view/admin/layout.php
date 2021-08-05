@@ -6,8 +6,7 @@
 	<title>OneIndex 系统管理</title>
 	<link rel="icon" href="<?php e(config('favicon'));?>">
   <link rel="shortcut icon" href="<?php e(config('favicon'));?>">
-	<?php e(config('loadmdui_css'));?>
-	<?php e(config('loadmdui_js'));?>
+	<?php e(config('loadmdui'));?>
 	<script>$ = mdui.$;</script>
 </head>
 <body class="mdui-drawer-body-left mdui-appbar-with-toolbar  mdui-theme-primary-indigo mdui-theme-accent-blue">
