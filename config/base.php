@@ -4,7 +4,7 @@
     'favicon' => '/logo.png',
     'author' => 'donwa',
     'copyright' => 'Copyright © by donwa All Rights Reserved.',
-    'password' => 'oneindex',
+    'password' => 'OneIndex',
     'style' => 'nexmoe',
     'onedrive_root' => '',
     'cache_type' => 'secache',
@@ -27,13 +27,13 @@
     'loadnprogress' => '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css"/><script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>',
     'loadJustified-Gallery' => '<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/miromannino/Justified-Gallery@3.8.1/dist/css/justifiedGallery.css"/><script src="https://cdn.jsdelivr.net/gh/miromannino/Justified-Gallery@3.8.1/dist/js/jquery.justifiedGallery.js"></script>',
     'loadMathJax_js' => '<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-chtml.js"></script>',
-    'loadMathJax_config' => '
+    'loadMathJax_config' => '<script>
 MathJax = {
     tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
+        inlineMath: [["$", "$"], ["\\(", "\\)"]]
     }
 };
-',
+</script>',
     'thumbsize' => '720',
     'nprogress_style' => '
 #nprogress .bar {

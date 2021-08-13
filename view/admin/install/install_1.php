@@ -16,6 +16,13 @@
 
 	<form action="" method="post">
 		<div class="mdui-textfield mdui-textfield-floating-label">
+			<i class="mdui-icon material-icons">apps</i>
+			<label class="mdui-textfield-label">应用名(appName)(可自定)</label>
+			<input type="text" type="text" class="mdui-textfield-input" name="app_name" required value="<?php echo config('app_name');?>"/>
+			<div class="mdui-textfield-error">应用名不能为空</div>
+		</div>
+		<br>
+		<div class="mdui-textfield mdui-textfield-floating-label">
 			<i class="mdui-icon material-icons">https</i>
 			<label class="mdui-textfield-label">应用机密(client secret)</label>
 			<input type="text" type="text" class="mdui-textfield-input" name="client_secret" required value="<?php echo config('client_secret');?>"/>
@@ -32,8 +39,8 @@
 
 		<div class="mdui-textfield mdui-textfield-floating-label">
 		   <i class="mdui-icon material-icons">&#xe41a;</i>
-		   <?php if($redirect_uri == 'https://ju.tn/'):?>
-		   <label class="mdui-textfield-label">由于你的网站不是<b>http://localhost/</b>。将通过ju.tn进行中转</label>
+		   <?php if($redirect_uri == 'https://oneindex.github.io/'):?>
+		   <label class="mdui-textfield-label">由于你的网站不是<b>http://localhost/</b>。将通过oneindex.github.io进行中转</label>
 		   <?php endif;?>
 		   <label class="mdui-textfield-label"><?php echo $redirect_uri;?></label>
 		   <input type="text" class="mdui-textfield-input" disabled  value="<?php echo $redirect_uri;?>"/>
