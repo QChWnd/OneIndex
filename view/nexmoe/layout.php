@@ -15,9 +15,13 @@
     <?php e(config('loadmdui'));?>
     <?php e(config('loadjquery'));?>
     <?php e(config('loadnprogress'));?>
+<?php if($is_gallery):?>
     <?php e(config('loadJustified-Gallery'));?>
+<?php endif;?>
+<?php if($is_MathJax):?>
     <?php e(config('loadMathJax_config'));?>
     <?php e(config('loadMathJax_js'));?>
+<?php endif;?>
 </head>
     <?php e(config('nexmoe_ext'));?>
 <body class="mdui-theme-layout-<?php e(config('nexmoe_mdui-theme-layout'));?> mdui-theme-primary-<?php e(config('nexmoe_mdui-theme-primary_color'));?> mdui-theme-accent-<?php e(config('nexmoe_mdui-theme-accent_color'));?>">

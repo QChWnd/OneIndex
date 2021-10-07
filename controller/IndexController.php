@@ -119,6 +119,13 @@ class IndexController{
 			//不在列表中展示
 			unset($this->items['.gallery']);
 		}
+
+		if($this->items['.MathJax']){
+			$is_MathJax = true;
+			//不在列表中展示
+			unset($this->items['.MathJax']);
+		}
+
 		return view::load('list')
 					->with('title', 'Index of '. urldecode($this->url_path))
 					->with('navs', $navs)
@@ -127,7 +134,8 @@ class IndexController{
 					->with('items', $this->items)
 					->with('head', $head)
 					->with('readme', $readme)
-					->with('is_gallery', $is_gallery);
+					->with('is_gallery', $is_gallery)
+					->with('is_MathJax', $is_MathJax);
 	}
 
 	function show($item){
