@@ -1,3 +1,5 @@
+# it's outdated and no longer working. You should consider using [Alist](https://github.com/alist-org/alist).
+
 # Onedrive Directory Index
 
 #### Forked from [ailsio/Oneindex](https://github.com/ailsio/Oneindex).
