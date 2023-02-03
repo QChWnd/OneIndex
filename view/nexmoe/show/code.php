@@ -37,7 +37,7 @@
     
     </div>
 </div>
-<a href="<?php e($url);?>" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-<?php e(config('nexmoe_mdui-color-theme-accent_color'));?>"><i class="mdui-icon material-icons">file_download</i></a>
+<a href="<?php e($url);?>" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-<?php e(config('nexmoe@mdui-color-theme-accent_color'));?>"><i class="mdui-icon material-icons">file_download</i></a>
 
 <script src="https://cdn.bootcss.com/ace/1.2.9/ace.js"></script>
 <script src="https://cdn.bootcss.com/ace/1.2.9/ext-language_tools.js"></script>

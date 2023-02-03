@@ -10,7 +10,7 @@
         width="100%"
         style="position: absolute;top:0;left:0; z-index:10;"
         ></iframe>
-<a href="<?php e($url);?>" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-<?php e(config('nexmoe_mdui-color-theme-accent_color'));?>" style="z-index:99;"><i class="mdui-icon material-icons">file_download</i></a>
+<a href="<?php e($url);?>" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-<?php e(config('nexmoe@mdui-color-theme-accent_color'));?>" style="z-index:99;"><i class="mdui-icon material-icons">file_download</i></a>
 <script>
 $ = mdui.$;
 $(function(){  

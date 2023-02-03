@@ -2,16 +2,16 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="theme-color" content="<?php e(config('nexmoe_theme-color'));?>">
+    <meta name="theme-color" content="<?php e(config('nexmoe@theme-color'));?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
     <title><?php e($title.' - '.config('site_name'));?></title>
     <link rel="icon" href="<?php e(config('favicon'));?>">
     <link rel="shortcut icon" href="<?php e(config('favicon'));?>">
     <?php e(config('loadmdui'));?>
     <?php e(config('loadnprogress'));?>
-    <?php e(config('nexmoe_ext'));?>
+    <?php e(config('nexmoe@ext'));?>
 </head>
-<body class="mdui-theme-layout-<?php e(config('nexmoe_mdui-theme-layout'));?> mdui-theme-primary-<?php e(config('nexmoe_mdui-theme-primary_color'));?> mdui-theme-accent-<?php e(config('nexmoe_mdui-theme-accent_color'));?>">
+<body class="mdui-theme-layout-<?php e(config('nexmoe@mdui-theme-layout'));?> mdui-theme-primary-<?php e(config('nexmoe@mdui-theme-primary_color'));?> mdui-theme-accent-<?php e(config('nexmoe@mdui-theme-accent_color'));?>">
     <header class="mdui-appbar mdui-color-theme">
         <div class="mdui-toolbar mdui-container" style="
             background: #ffffff15;
@@ -30,7 +30,7 @@
     <div class="mdui-container">
         <?php view::section('content');?>
     </div>
-    <style><?php e(config('nexmoe_nprogress_style'));?><?php e(config('nexmoe_layout_style'));?></style>
+    <style><?php e(config('nexmoe@nprogress_style'));?><?php e(config('nexmoe@layout_style'));?></style>
     <footer class="mdui-container-fluid" style="text-align: center; margin-top: 5%;">
         <div id="favicon">
             <img src="<?php e(config('favicon'));?>" style="width: 130px; border-radius: 100%;">

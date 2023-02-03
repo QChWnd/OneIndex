@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="theme-color" content="<?php e(config('nexmoe_theme-color'));?>">
+    <meta name="theme-color" content="<?php e(config('nexmoe@theme-color'));?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
     <?php if($path != '/'):?>
     <title><?php e($title.' - '.config('site_name'));?></title>
@@ -23,8 +23,8 @@
     <?php e(config('loadMathJax_js'));?>
 <?php endif;?>
 </head>
-    <?php e(config('nexmoe_ext'));?>
-<body class="mdui-theme-layout-<?php e(config('nexmoe_mdui-theme-layout'));?> mdui-theme-primary-<?php e(config('nexmoe_mdui-theme-primary_color'));?> mdui-theme-accent-<?php e(config('nexmoe_mdui-theme-accent_color'));?>">
+    <?php e(config('nexmoe@ext'));?>
+<body class="mdui-theme-layout-<?php e(config('nexmoe@mdui-theme-layout'));?> mdui-theme-primary-<?php e(config('nexmoe@mdui-theme-primary_color'));?> mdui-theme-accent-<?php e(config('nexmoe@mdui-theme-accent_color'));?>">
     <div class="mdui-container">
         <div class="mdui-toolbar mdui-container" style="
             background: #ffffff15;
@@ -50,7 +50,7 @@
             </div>
         </footer>
     </div>
-    <style><?php e(config('nexmoe_nprogress_style'));?><?php e(config('nexmoe_layout_style'));?></style>
+    <style><?php e(config('nexmoe@nprogress_style'));?><?php e(config('nexmoe@layout_style'));?></style>
     <script>
         NProgress.start();
         setTimeout(function () {

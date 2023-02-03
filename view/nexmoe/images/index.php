@@ -8,7 +8,7 @@
 	<div class="mdui-row-xs-3">
 	  <div class="mdui-col"></div>
 	  <div class="mdui-col">
-	    <button class="mdui-btn mdui-btn-block mdui-color-theme-<?php e(config('nexmoe_mdui-color-theme-accent_color'));?> mdui-ripple">上传</button>
+	    <button class="mdui-btn mdui-btn-block mdui-color-theme-<?php e(config('nexmoe@mdui-color-theme-accent_color'));?> mdui-ripple">上传</button>
 	  </div>
 	</div>
 	</form>

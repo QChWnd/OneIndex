@@ -231,7 +231,7 @@ function file_ico($item){
 </div>
 <?php endif;?>
 <?php if($readme):?>
-<div class="mdui-typo mdui-shadow-3" style="padding: 20px;margin: 20px; 0">
+<div class="mdui-typo mdui-shadow-3" style="padding: 20px;margin: 20px 0;">
     <div class="mdui-chip">
         <span class="mdui-chip-icon"><i class="mdui-icon material-icons">face</i></span>
         <span class="mdui-chip-title">README.md</span>
@@ -329,6 +329,6 @@ $(function(){
 });
 </script>
 <?php if(!$is_gallery):?>
-<a href="javascript:thumb();" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-<?php e(config('nexmoe_mdui-color-theme-accent_color'));?>"><i class="mdui-icon material-icons">format_list_bulleted</i></a>
+<a href="javascript:thumb();" class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-<?php e(config('nexmoe@mdui-color-theme-accent_color'));?>"><i class="mdui-icon material-icons">format_list_bulleted</i></a>
 <?php endif;?>
 <?php view::end('content');?>
