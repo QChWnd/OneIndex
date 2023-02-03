@@ -240,6 +240,8 @@
 					$paths[] = rawurlencode($v);
 				}
 			}
+			if (!$paths)
+				$paths = [];
 			return @join('/',$paths);
 		}
 			

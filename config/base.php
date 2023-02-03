@@ -1,7 +1,9 @@
-<?php return array(
+<?php
+return array(
+    'app_name' => 'OneIndex',
     'site_name' => 'OneIndex',
     'site_descr' => 'OneDrive Directory Index',
-    'favicon' => '/logo.png',
+    'favicon' => '/.logo.webp',
     'author' => 'donwa',
     'copyright' => 'Copyright © by donwa All Rights Reserved.',
     'password' => 'OneIndex',
@@ -22,21 +24,36 @@
         'doc' => ['csv', 'doc', 'docx', 'odp', 'ods', 'odt', 'pot', 'potm', 'potx', 'pps','ppsx', 'ppsxm', 'ppt', 'pptm', 'pptx', 'rtf', 'xls', 'xlsx']
     ),
     'images' => ['home' => false, 'public' => false, 'exts' => ['jpg','png','gif','bmp']],
-    'loadmdui' => '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/css/mdui.min.css" integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw" crossorigin="anonymous"/><script src="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/js/mdui.min.js" integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A" crossorigin="anonymous"></script>',
+
+    'loadmdui' =>
+'<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/css/mdui.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/js/mdui.min.js"></script>',
+
     'loadjquery' => '<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>',
-    'loadnprogress' => '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css"/><script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>',
-    'loadJustified-Gallery' => '<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/miromannino/Justified-Gallery@3.8.1/dist/css/justifiedGallery.css"/><script src="https://cdn.jsdelivr.net/gh/miromannino/Justified-Gallery@3.8.1/dist/js/jquery.justifiedGallery.js"></script>',
+
+    'loadnprogress' =>
+'<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css"/>
+<script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>',
+
+    'loadJustified-Gallery' =>
+'<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/miromannino/Justified-Gallery@3.8.1/dist/css/justifiedGallery.css"/>
+<script src="https://cdn.jsdelivr.net/gh/miromannino/Justified-Gallery@3.8.1/dist/js/jquery.justifiedGallery.js"></script>',
+
     'loadMathJax_js' => '<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-chtml.js"></script>',
-    'loadMathJax_config' => '<script>
+    
+    'loadMathJax_config' => 
+'<script>
 MathJax = {
     tex: {
         inlineMath: [["$", "$"], ["\\(", "\\)"]]
     }
 };
 </script>',
+
     'thumbsize' => '720',
-    'nprogress_style' => '
-#nprogress .bar {
+
+    'nprogress_style' => 
+'#nprogress .bar {
     background: #ff7e91;
 }
 #nprogress .peg {
@@ -45,10 +62,10 @@ MathJax = {
 #nprogress .spinner-icon {
     border-top-color: #ff7e91;
     border-left-color: #ff7e91;
-}
-',
-    'nexmoe_layout_style' => '
-body {
+}',
+
+    'nexmoe_layout_style' =>
+'body {
     padding-bottom: 60px;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -160,12 +177,12 @@ body {
     .mdui-toolbar > a:last-child, .mdui-toolbar > .mdui-typo-headline, .mdui-toolbar > i:first-child {
         display: block;
     }
-}
-',
-    'nexmoe_ext' => '
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/QChWnd/QChWnd.GitHub.io@master/cdn/autobg.css">
-<script src="https://cdn.jsdelivr.net/gh/Fuukei/Public_Repository@latest/static/js/sakura-native.js"></script>
-',
+}',
+
+    'nexmoe_ext' =>
+'<script src="https://cdn.jsdelivr.net/gh/QChWnd/QChWnd.GitHub.io@master/cdn/js/autobg.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/QChWnd/QChWnd.GitHub.io@master/cdn/js/sakura-native.js"></script>',
+
     'nexmoe_theme-color' => '#ff7e91',
     'nexmoe_mdui-theme-primary_color' => 'pink',
     'nexmoe_mdui-theme-accent_color' => 'pink',
