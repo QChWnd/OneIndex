@@ -1,5 +1,3 @@
-# it's outdated and no longer working. You should consider using [Alist](https://github.com/alist-org/alist).
-
 # Onedrive Directory Index
 
 #### Forked from [ailsio/Oneindex](https://github.com/ailsio/Oneindex).
@@ -8,7 +6,7 @@
 
 
 
-### 部分新特性：
+### New features：
 
 更新 [mdui](https://www.mdui.org/) 至1.0.1
 
@@ -31,5 +29,3 @@
 更強大的管理後台
 
 [DPlayer](http://dplayer.js.org/)
-
-更少的 bug
