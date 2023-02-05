@@ -1,5 +1,6 @@
 <?php
-class route {
+class route
+{
 	public static $uri;
 	private static $method;
 	private static $root = '/';
@@ -11,7 +12,8 @@ class route {
 		'#all' => '.*',
 	);
 
-	public static function __callstatic($method, $args) {
+	public static function __callstatic($method, $args)
+	{
 		if (self::$runed) {
 			return;
 		}
@@ -44,8 +46,11 @@ class route {
 		}
 	}
 
-	public static function init() {
-		if (!empty(self::$method)) {return;}
+	public static function init()
+	{
+		if (!empty(self::$method)) {
+			return;
+		}
 		self::$uri = self::get_uri();
 		self::$method = empty($_POST['_METHOD']) ? $_SERVER['REQUEST_METHOD'] : $_POST['_METHOD'];
 		if (defined('CONTROLLER_PATH')) {
@@ -58,7 +63,8 @@ class route {
 		}
 	}
 
-	public static function auto($controller_path) {
+	public static function auto($controller_path)
+	{
 		self::init();
 		$uri = self::get_uri();
 		list($tmp, $controller, $action) = explode('/', $uri);
@@ -75,22 +81,24 @@ class route {
 		}
 	}
 
-	public static function group($middleware, $callback){
+	public static function group($middleware, $callback)
+	{
 		self::init();
 		if (is_string($middleware) && strpos($middleware, '@') > 0) {
 			list($class, $action) = explode('@', $middleware);
 			$object = new $class();
 			$result = $object->$action();
-		}elseif(is_callable($middleware)){
+		} elseif (is_callable($middleware)) {
 			$result = $middleware();
 		}
 
-		if($result == true && is_callable($callback)){
+		if ($result == true && is_callable($callback)) {
 			return $callback();
 		}
 	}
 
-	public static function resource($name, $controller) {
+	public static function resource($name, $controller)
+	{
 		self::get('/' . $name, $controller . '@index');
 		self::get('/' . $name . '/add', $controller . '@add');
 		self::post('/' . $name, $controller . '@store');
@@ -100,7 +108,8 @@ class route {
 		self::get('/' . $name . '/{id:#num}/delete', $controller . '@delete');
 	}
 
-	public static function uri_match($pattern, $uri) {
+	public static function uri_match($pattern, $uri)
+	{
 		$pattern = ($pattern == '/') ? '/' : rtrim($pattern, '\/');
 
 		$ps = explode('/', $pattern);
@@ -108,12 +117,12 @@ class route {
 		$searches = array_keys(static::$patterns);
 		$replaces = array_values(static::$patterns);
 
-		foreach($ps as &$p){
-				$p = str_replace($searches, $replaces, $p);
-				$p = preg_replace("`\{(\w+)\:([^\)]+)\}`", '(?P<$1>$2)', $p);	
+		foreach ($ps as &$p) {
+			$p = str_replace($searches, $replaces, $p);
+			$p = preg_replace("`\{(\w+)\:([^\)]+)\}`", '(?P<$1>$2)', $p);
 		}
 
-		$pattern = join('/',$ps);
+		$pattern = join('/', $ps);
 
 		if (preg_match("`^{$pattern}$`", $uri)) {
 			preg_match_all("`^{$pattern}$`", $uri, $matches, PREG_PATTERN_ORDER);
@@ -126,7 +135,8 @@ class route {
 		}
 	}
 
-	public static function get_uri() {
+	public static function get_uri()
+	{
 		$file = basename($_SERVER['PHP_SELF']);
 		$path = dirname($_SERVER['PHP_SELF']);
 		$req_uri = $_SERVER['REQUEST_URI'];

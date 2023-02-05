@@ -1,11 +1,13 @@
 <?php
 !defined('VIEW_PATH') && define('VIEW_PATH', 'view/');
-class view {
+class view
+{
 	private $_view = array('file' => '', 'data' => array());
 	static $_pos = null;
-    static $_section = null;
+	static $_section = null;
 
-	static function load($file, $set = null) {
+	static function load($file, $set = null)
+	{
 		if (is_int(strripos($file, '..'))) {
 			die("error view file name:$file");
 		}
@@ -14,7 +16,8 @@ class view {
 		return new view($file, $set);
 	}
 
-	public function __construct($file, $set = null) {
+	public function __construct($file, $set = null)
+	{
 		if (isset(self::$_pos)) {
 			$this->_view['parent'] = self::$_pos;
 			$this->with($this->_view['parent']->_view['data']);
@@ -23,7 +26,8 @@ class view {
 		$this->with($set);
 	}
 
-	public function with($name, $value = NULL) {
+	public function with($name, $value = NULL)
+	{
 		if (is_array($name)) {
 			$this->_view['data'] = array_merge($this->_view['data'], $name);
 		} elseif (is_string($name)) {
@@ -32,11 +36,12 @@ class view {
 		return $this;
 	}
 
-	public function __toString() {
+	public function __toString()
+	{
 		self::$_pos = $this;
 
 		$this->_view['file'] = VIEW_PATH . $this->_view['file'] . '.php';
-		if(!file_exists($this->_view['file'])){
+		if (!file_exists($this->_view['file'])) {
 			self::to404('404');
 		}
 
@@ -57,18 +62,21 @@ class view {
 		return $return_str;
 	}
 
-	public function show() {
+	public function show()
+	{
 		echo $this;
 	}
 
-    
-	static function layout($file) {
+
+	static function layout($file)
+	{
 		ob_start();
 		$view_layout = self::load($file);
 		self::$_pos->_view['layout'] = $view_layout;
 	}
 
-	static function section($name) {
+	static function section($name)
+	{
 		if (isset(self::$_pos->_view['section'][$name])) {
 			echo self::$_pos->_view['section'][$name];
 		} elseif (isset(self::$_pos->_view['parent']->_view['section'][$name])) {
@@ -76,27 +84,32 @@ class view {
 		}
 	}
 
-	static function begin($name) {
-        self::$_section = $name;
+	static function begin($name)
+	{
+		self::$_section = $name;
 		ob_start();
 	}
 
-	static function end() {
+	static function end()
+	{
 		self::$_pos->_view['section'][self::$_section] = ob_get_clean();
-        self::$_section = null;
+		self::$_section = null;
 	}
 
-	static function direct($loction) {
+	static function direct($loction)
+	{
 		header("Location:$loction");
 		exit();
 	}
 
-	static function abort() {
+	static function abort()
+	{
 		header("HTTP/1.1 502 Bad Gateway");
 		exit();
 	}
 
-	static function to404(){
+	static function to404()
+	{
 		header("HTTP/1.1 404 Not Found");
 		exit();
 	}

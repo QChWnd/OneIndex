@@ -1,5 +1,6 @@
 <?php
-class fetch {
+class fetch
+{
 	public static $headers = "User-Agent:Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36";
 	public static $cookies;
 	public static $curl_opt;
@@ -7,7 +8,8 @@ class fetch {
 
 	public static $max_connect = 10;
 
-	public static function init($opt = array()) {
+	public static function init($opt = array())
+	{
 		self::$curl_opt = array(
 			CURLOPT_RETURNTRANSFER => 1, //true, $head 有请求的返回值
 			CURLOPT_BINARYTRANSFER => true, //返回原生的Raw输出
@@ -30,7 +32,8 @@ class fetch {
 	 * fetch::get('http://www.google.com/');
 	 * fetch::post('http://www.google.com/', array('name'=>'foo'));
 	 */
-	public static function __callstatic($method, $args) {
+	public static function __callstatic($method, $args)
+	{
 		if (is_null(self::$curl_opt)) {
 			self::init();
 		}
@@ -53,7 +56,8 @@ class fetch {
 		}
 	}
 
-	private static function bulid_request($request, $method = 'GET', $post_data = null, $callback = null) {
+	private static function bulid_request($request, $method = 'GET', $post_data = null, $callback = null)
+	{
 		//url
 		if (is_string($request)) {
 			$request = array('url' => $request);
@@ -64,7 +68,8 @@ class fetch {
 		return $request;
 	}
 
-	private static function bulid_ch(&$request) {
+	private static function bulid_ch(&$request)
+	{
 		// url
 		$ch = curl_init($request['url']);
 		// curl_opt
@@ -103,7 +108,8 @@ class fetch {
 		return $ch;
 	}
 
-	private static function response($raw, $ch) {
+	private static function response($raw, $ch)
+	{
 		$response = (object) curl_getinfo($ch);
 		$response->raw = $raw;
 		//$raw = fetch::iconv($raw, $response->content_type);
@@ -114,7 +120,8 @@ class fetch {
 		return $response;
 	}
 
-	private static function single_curl($request) {
+	private static function single_curl($request)
+	{
 		$ch = self::bulid_ch($request);
 		$raw = curl_exec($ch);
 		$response = self::response($raw, $ch);
@@ -125,7 +132,8 @@ class fetch {
 		return $response;
 	}
 
-	private static function rolling_curl($requests) {
+	private static function rolling_curl($requests)
+	{
 		$master = curl_multi_init();
 		$map = array();
 		// start the first batch of requests
@@ -184,20 +192,20 @@ class fetch {
 			if ($running) {
 				curl_multi_select($master, 10);
 			}
-
 		} while ($running);
 
 		return $responses;
 	}
 
-	private static function bulid_request_header($headers, &$cookies) {
+	private static function bulid_request_header($headers, &$cookies)
+	{
 		if (is_array($headers)) {
 			$headers = join(PHP_EOL, $headers);
 		}
 		if (is_array(self::$headers)) {
 			self::$headers = join(PHP_EOL, self::$headers);
 		}
-		$headers = self::$headers.PHP_EOL .$headers;
+		$headers = self::$headers . PHP_EOL . $headers;
 
 		foreach (explode(PHP_EOL, $headers) as $k => $v) {
 			@list($k, $v) = explode(':', $v, 2);
@@ -218,7 +226,8 @@ class fetch {
 		return (array) $return;
 	}
 
-	public static function iconv(&$raw, $content_type) {
+	public static function iconv(&$raw, $content_type)
+	{
 		@list($tmp, $charset) = explode('CHARSET=', strtoupper($content_type));
 
 		if (empty($charset) && stripos($content_type, 'html') > 0) {
@@ -229,16 +238,17 @@ class fetch {
 		return empty($charset) ? $raw : iconv($charset, "UTF-8//IGNORE", $raw);
 	}
 
-	public static function get_respone_cookies($raw) {
+	public static function get_respone_cookies($raw)
+	{
 		$cookies = array();
-		if(strpos($raw, PHP_EOL) != false){
-		    $lines = explode(PHP_EOL, $raw);
-		}elseif(strpos($raw, "\r\n") != false){
-		    $lines = explode("\r\n", $raw);
-		}elseif(strpos($raw, '\r\n') != false){
-		    $lines = explode('\r\n', $raw);
+		if (strpos($raw, PHP_EOL) != false) {
+			$lines = explode(PHP_EOL, $raw);
+		} elseif (strpos($raw, "\r\n") != false) {
+			$lines = explode("\r\n", $raw);
+		} elseif (strpos($raw, '\r\n') != false) {
+			$lines = explode('\r\n', $raw);
 		}
-		
+
 		foreach ((array)$lines as $line) {
 			if (substr($line, 0, 11) == 'Set-Cookie:') {
 				list($k, $v) = explode('=', substr($line, 11), 2);
@@ -249,7 +259,8 @@ class fetch {
 		return $cookies;
 	}
 
-	public static function cookies_arr2str($arr) {
+	public static function cookies_arr2str($arr)
+	{
 		$str = "";
 		foreach ((array) $arr as $k => $v) {
 			$str .= $k . "=" . $v . "; ";

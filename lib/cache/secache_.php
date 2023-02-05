@@ -566,4 +566,3 @@ class secache{
         trigger_error($errstr,$errno);
     }
 }
-?>

@@ -56,13 +56,17 @@
 	    </tbody>
 	  </table>
 	</div>
+	<form action="" method="post">
+		<div class="mdui-textfield mdui-textfield-floating-label">
+			<i class="mdui-icon material-icons">apps</i>
+			<label class="mdui-textfield-label">应用名(appName)(可自定)</label>
+			<input type="text" type="text" class="mdui-textfield-input" name="app_name" required value="<?php echo config('app_name');?>"/>
+			<div class="mdui-textfield-error">应用名不能为空</div>
+		</div>
+		<br>
+	    <?php if(array_sum($check) == count($check)):?><button class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-float-right" type="submit">下一步</button><?php endif;?>
+	</form>
 	<br><br>
-	<!--<a class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-float-left" href="?step=1">上一步</a>-->
-	<?php if(array_sum($check) == count($check)):?>
-	<a class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-float-right" href="?step=1">下一步</a>
-	<?php else:?>
-	<button class="mdui-btn mdui-btn-raised  mdui-float-right disabled" disabled>下一步</button>
-	<?php endif;?>
 </div>
 
 <?php view::end('content');?>
